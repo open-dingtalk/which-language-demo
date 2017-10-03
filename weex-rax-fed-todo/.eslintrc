@@ -1,0 +1,42 @@
+{
+  "extends": "eslint-config-ali/react",
+  "globals": {
+    "it": true,
+    "describe": true,
+    "require": true,
+    "process": true,
+    "before": true,
+    "after": true,
+    "beforeEach": true,
+    "afterEach": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "rules": {
+    "strict": "off",
+    "react/react-in-jsx-scope": "off",
+    "new-cap": "off",
+    "no-console": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false,
+        "varsIgnorePattern": "createElement"
+      }
+    ],
+    "class-methods-use-this": "off"
+  },
+  "parser": "babel-eslint"
+}

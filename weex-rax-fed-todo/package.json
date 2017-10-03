@@ -1,0 +1,31 @@
+{
+  "name": "weex-rax-fed-todo",
+  "description": "rax demo",
+  "version": "0.1.0",
+  "keyword": [
+    "weex-nuke",
+    "nuke",
+    "dingtalk"
+  ],
+  "author": "icepy",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "dingtalk-javascript-sdk": "^0.1.5",
+    "dingtalk-javascript-utility": "^0.1.5",
+    "qs": "^6.4.0",
+    "rax": "^0.4.x",
+    "rax-redux": "^0.4.x",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.1.0",
+    "universal-toast": "0.4.x",
+    "weex-nuke": "^0.0.3"
+  },
+  "devDependencies": {
+    "eslint": "3.19.0",
+    "babel-eslint": "^7.2.3",
+    "eslint-config-ali": "2.0.0",
+    "eslint-plugin-import": "2.6.0",
+    "eslint-plugin-jsx-a11y": "6.0.2",
+    "eslint-plugin-react": "7.1.0"
+  }
+}
