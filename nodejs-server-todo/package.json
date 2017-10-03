@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-server-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "icepy",
+  "license": "MIT",
+  "devDependencies": {
+    "stack-trace": "^0.0.9",
+    "winston": "^2.3.1",
+    "winston-daily-rotate-file": "^1.4.4"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "koa": "^1.2.5",
+    "koa-body-parser": "^1.1.2",
+    "koa-logger": "^1.3.1",
+    "koa-onerror": "^3.0.2",
+    "koa-router": "^5.4.0",
+    "moment": "^2.17.1"
+  }
+}
