@@ -15,7 +15,7 @@ look me, we can just do more demo. guess, u select which one ?
 我们非常欢迎社区的同学为钉钉的开发生态添砖加瓦，当你创建一个公开的演示项目时，你的项目中必须要包含：README.md，.gitignore，info.text 三个文件。
 
 - README.md可以把你的项目描述清楚，让钉钉的开发者可以快速的使用起来，好的反馈相信对你而言也是一种很有成就感的事情。
-- .gitignore文件可以将一些不是必须的文件提交到仓库。
+- .gitignore文件可以将一些不是必须的文件忽略，不提交到仓库。
 - info.text 文件可以给予一些必要的版本信息，注意事项，项目依赖等。
 
 对于公开演示的程序，我们要求必须包含JSAPI授权，获取userId，获取userInfo三个接口，并且有如下的规则：
