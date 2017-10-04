@@ -31,3 +31,9 @@ look me, we can just do more demo. guess, u select which one ?
 | /api/get | GET | userid | 获取用户信息 | {errcode:0,...response} |
 
 如果你准备就绪，请不要忘记 Fork项目，并发起一次 [Pull request](https://github.com/open-dingtalk/which-language-demo/pulls) 。
+
+## 社区开发群
+
+使用钉钉扫描二维码，加入社区开发群。
+
+![](https://gw.alicdn.com/tfs/TB1xkJRbwMPMeJjy1XdXXasrXXa-330-440.png)
