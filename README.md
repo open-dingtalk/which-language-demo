@@ -1,8 +1,8 @@
-# which-language-demo
+## which-language-demo
 
 look me, we can just do more demo. guess, u select which one ?
 
-# 社区支持
+## 社区支持
 
 钉钉开发社区有数以万计的企业服务开发者，你的公开演示程序，可以有很高机会曝光让其他的开发者学习，使用，甚至可以在这里认识更多志同道合的开发者。
 
@@ -16,6 +16,18 @@ look me, we can just do more demo. guess, u select which one ?
 
 - README.md可以把你的项目描述清楚，让钉钉的开发者可以快速的使用起来，好的反馈相信对你而言也是一种很有成就感的事情。
 - .gitignore文件可以将一些不是必须的文件提交到仓库。
-- info.text 文件可以给予一些必要的版本信息，注意事项等。
+- info.text 文件可以给予一些必要的版本信息，注意事项，项目依赖等。
+
+对于公开演示的程序，我们要求必须包含JSAPI授权，获取userId，获取userInfo三个接口，并且有如下的规则：
+
+- 可以定义不同的host，port以及protocol
+- 可以自己实现不同的逻辑
+- 对外暴露的path必须按照我们的要求定义
+
+| path   |    method   | 参数  | 作用 | response |
+| ------------- |:-------------:| -----:| -----:| ----: |
+| /api/jsapi-oauth | GET | href | 提供JSAPI授权 | {errcode:0,...response} |
+| /api/get-user-info | GET | code | 获取userid | {errcode:0,...response} |
+| /api/get | GET | userid | 获取用户信息 | {errcode:0,...response} |
 
 如果你准备就绪，请不要忘记 Fork项目，并发起一次 [Pull request](https://github.com/open-dingtalk/which-language-demo/pulls) 。
