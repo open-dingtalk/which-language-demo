@@ -15,7 +15,8 @@ const cx = classnames.bind(styles);
 const defaultProps = {
   home: {
     name: '',
-    asyncName: ''
+    asyncName: '',
+    userInfo: {}
   }
 };
 
@@ -37,14 +38,16 @@ class HomeView extends PureComponent{
   componentDidMount(){
     this.props.getDefault({'name':'wower'});
     this.props.getAsyncDefault({'name':'icepy'});
+    this.props.fetchJSAPIOAuth();
+    this.props.fetchUserInfo();
   }
 
   render(){
-    const { name,asyncName } = this.props.home;
+    const { name,asyncName,userInfo } = this.props.home;
     return (
       <div className={ cx('icepy') }>
         <Banner />
-        <Admin />
+        <Admin userInfo={ userInfo }/>
         <UserList />
         <AllAppList />
         <Manager />

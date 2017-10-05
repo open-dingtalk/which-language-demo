@@ -1,8 +1,9 @@
-import { HOME_SYNC_DEFAULT,HOME_ASYNC_DEFAULT } from './constants';
+import { HOME_SYNC_DEFAULT,HOME_ASYNC_DEFAULT,HOME_FETCH_USERINFO } from './constants';
 
 const initState = {
   name: '',
-  asyncName: '...'
+  asyncName: '...',
+  userInfo: {}
 };
 
 export default function homeReducers(state = initState, action){
@@ -12,6 +13,8 @@ export default function homeReducers(state = initState, action){
       return { ...state, name: payload.data }
     case HOME_ASYNC_DEFAULT:
       return { ...state, asyncName: payload.data}
+    case HOME_FETCH_USERINFO:
+      return { ...state, userInfo: payload.data}  
     default:
       return { ...state}
   }
