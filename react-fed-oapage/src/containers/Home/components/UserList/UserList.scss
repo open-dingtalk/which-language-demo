@@ -1,0 +1,106 @@
+.index-userlist{
+  background-color: #fff;
+}
+.index-userlist-item{
+  position: relative;
+}
+.index-title{
+  position: relative;
+  height: 49px;
+}
+.index-text{
+  position: absolute;
+  font-size: 15px;
+  color: #323334;
+  left: 12px;
+  top: 16.5px;
+}
+.index-userlist-line{
+  background-color: rgba(228, 228, 228, 1);
+  height: 1px;
+  width: calc(100% - 11.5px);
+  position: absolute;
+  left: 11.5px;
+  bottom: 0px;
+}
+
+.grid{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.cell{
+  width: 25%;
+  position: relative;
+  margin-bottom: 20px;
+}
+.cell-image-container{
+  width: 50px;
+  height: 49px;
+  position: relative;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.cell-text{
+  text-align: center;
+  color: #323334;
+  font-size: 13px;
+  margin-top: 12px;
+}
+.cell-mount{
+  color: #323334;
+  font-size: 20px;
+  text-align: center;
+}
+.cell-unit{
+  color: #999;
+  font-size: 10px;
+}
+.cell-tag{
+  text-align: center;
+  color: #999;
+  font-size: 10px;
+  margin-top: 4.5px;
+}
+.cell-app-type-container{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .2);
+  margin: 0;
+  padding: 0;
+  height: 13px;
+}
+.cell-app-type{
+  font-size:8px;
+  color: #fff;
+  text-align: center;
+  line-height: 13px;
+}
+.cell-image{
+  width: 50px;
+  height: 49px;
+  border-radius: 10px;
+}
+.cell-image-container{
+  width: 50px;
+  height: 49px;
+  position: relative;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.cell-image{
+  width: 50px;
+  height: 49px;
+  border-radius: 10px;
+}
+.cell-text{
+  text-align: center;
+  color: #323334;
+  font-size: 13px;
+  margin-top: 12px;
+}
