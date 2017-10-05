@@ -6,6 +6,10 @@
 - https://github.com/moment/moment
 - https://github.com/alexmingoia/koa-router
 
+## 替换CorpID CorpSecret
+
+**注意⚠️：调用钉钉的服务需要依赖CorpID和CorpSecret，在启动服务之前，请确保将`app/env.js`中的CorpID和CorpSecret替换成你企业的CorpID和CorpSecret。**
+
 ## 如何启动服务
 
 windows用户：
@@ -21,7 +25,7 @@ $ npm install -g nodemon
 $ npm run serve
 ```
 
-**由于服务使用了几个windows不支持的方法来显示IP地址，So，windows用户需要将index.js中`app.use(helper());`和`const helper = require('./middleware/helper');`两行删除，运行`npm run serve`才不会报错。**
+**注意⚠️：由于服务使用了几个windows不支持的方法来显示IP地址，So，windows用户需要将index.js中`app.use(helper());`和`const helper = require('./middleware/helper');`两行删除，运行`npm run serve`才不会报错。**
 
 Mac用户：
 
@@ -93,16 +97,16 @@ app.listen(PORT);
 
 ```JavaScript
 dd.config({
-    agentId: '', // 必填，微应用ID
-    corpId: '',//必填，企业ID
-    timeStamp: , // 必填，生成签名的时间戳
-    nonceStr: '', // 必填，生成签名的随机串
-    signature: '', // 必填，签名
-    type:0/1,   //选填。0表示微应用的jsapi,1表示服务窗的jsapi。不填默认为0。该参数从dingtalk.js的0.8.3版本开始支持
-    jsApiList : [ 'runtime.info', 'biz.contact.choose',
-        'device.notification.confirm', 'device.notification.alert',
-        'device.notification.prompt', 'biz.ding.post',
-        'biz.util.openLink' ] // 必填，需要使用的jsapi列表，注意：不要带dd。
+  agentId: '', // 必填，微应用ID
+  corpId: '',//必填，企业ID
+  timeStamp: , // 必填，生成签名的时间戳
+  nonceStr: '', // 必填，生成签名的随机串
+  signature: '', // 必填，签名
+  type:0/1,   //选填。0表示微应用的jsapi,1表示服务窗的jsapi。不填默认为0。该参数从dingtalk.js的0.8.3版本开始支持
+  jsApiList : [ 'runtime.info', 'biz.contact.choose',
+      'device.notification.confirm', 'device.notification.alert',
+      'device.notification.prompt', 'biz.ding.post',
+      'biz.util.openLink' ] // 必填，需要使用的jsapi列表，注意：不要带dd。
 });
 ```
 从config的配置参数来看，我们需要服务端来帮助我们生成签名，随机串，时间，corpId，agentId，于是看了文档之后发现签名依赖于jsapi_ticket，通过如何获取jsapi_ticket的参数，我们又可以推断出需要access_token，好了，这应该是我们该做的第一个步骤。
@@ -126,29 +130,29 @@ const OAPI_HOST = env.OAPI_HOST[env.scheme];
  *   通过corpId，corpsecret换取AccessToken
  * */
 function *getAccessToken(){
-    const accessTokenRequest = {
-        url: OAPI_HOST + '/gettoken',
-        method: 'get',
-        params: {
-            corpid: CorpID,
-            corpsecret: CorpSecret
-        }
-    };
-    return axios(accessTokenRequest).then(function(response){
-        const data = response.data;
-        if (data.errcode === 0){
-            TokenCache = data.access_token;
-            logger.info('token：' + TokenCache);
-        }
-        return data;
-    }).catch(function (err) {
-        logger.log('error','get access token request error');
-        return {
-            errcode: 500,
-            errmsg: 'get access token request bad',
-            error: err
-        }
-    });
+  const accessTokenRequest = {
+    url: OAPI_HOST + '/gettoken',
+    method: 'get',
+    params: {
+      corpid: CorpID,
+      corpsecret: CorpSecret
+    }
+  };
+  return axios(accessTokenRequest).then(function(response){
+    const data = response.data;
+    if (data.errcode === 0){
+      TokenCache = data.access_token;
+      logger.info('token：' + TokenCache);
+    }
+    return data;
+  }).catch(function (err) {
+    logger.log('error','get access token request error');
+    return {
+      errcode: 500,
+      errmsg: 'get access token request bad',
+      error: err
+    }
+  });
 }
 
 module.exports = getAccessToken;

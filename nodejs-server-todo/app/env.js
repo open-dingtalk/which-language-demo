@@ -8,8 +8,8 @@ const config = {
         beta: 'mongodb://127.0.0.1:27017/tokentable',
         release: 'mongodb://127.0.0.1:27017/tokentable'
     },
-    CorpID: 'ding92f3ce1bc64e3e5b35c2f4657eb6378f',
-    CorpSecret: 'H1gmXMYbG8zulIgK48ctwe_gmAsCU3VyOZbx094LSbrtnIi4ig5ywsxjqEgDVaUm',
+    CorpID: '',
+    CorpSecret: '',
     OAPI_HOST: {
         release: 'https://oapi.dingtalk.com'
     }
