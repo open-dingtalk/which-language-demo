@@ -7,7 +7,6 @@ const koaLogger = require('koa-logger');
 const onerror = require('koa-onerror');
 const bodyParser = require('koa-body-parser');
 const apis = require('./api');
-const logger = require('./logger/');
 const helper = require('./middleware/helper');
 const app = koa();
 

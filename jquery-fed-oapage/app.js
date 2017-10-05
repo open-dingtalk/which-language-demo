@@ -1,5 +1,5 @@
 (function(){
-    var OPENAPIHOST = 'http://30.27.108.98:3000';
+    var OPENAPIHOST = 'http://30.27.108.2:3000';
     var isDingtalk = /DingTalk/.test(navigator.userAgent);
     var proper = {};
     var _userId = '';
