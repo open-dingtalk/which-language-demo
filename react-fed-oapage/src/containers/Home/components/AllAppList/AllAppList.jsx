@@ -20,7 +20,7 @@ class AllAppList extends React.Component{
           {
             ALLAPPLISTMOCKDATA.map((v) => {
               return (
-                <div className={cx('cell')}>
+                <div className={cx('cell')} key={v.id}>
                   <div className={cx('cell-box')}>
                     <div className={cx('cell-image-container')}>
                       <img src={v.icon} className={cx('cell-image')} />

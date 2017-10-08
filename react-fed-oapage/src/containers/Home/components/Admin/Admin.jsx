@@ -35,7 +35,7 @@ class Admin extends React.Component{
   }
 
   render(){
-    const infos = updateName();
+    const infos = this.updateName();
     const { wh, whImage } = infos;
     return(
       <div className={cx('index-admin')}>
