@@ -23,12 +23,19 @@ look me, we can just do more demo. guess, u select which one ?
 - 可以定义不同的host，port以及protocol
 - 可以自己实现不同的逻辑
 - 对外暴露的path必须按照我们的要求定义
+- 前后端分离的架构中服务端的实现需要注意 **跨域头 setHeader("Access-Control-Allow-Origin", "*")的设置** [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
 
 | path   |    method   | 参数  | 作用 | response |
 | ------------- |:-------------:| -----:| -----:| ----: |
 | /api/jsapi-oauth | GET | href | 提供JSAPI授权 | {errcode:0,...response} |
 | /api/get-user-info | GET | code | 获取userid | {errcode:0,...response} |
 | /api/get | GET | userid | 获取用户信息 | {errcode:0,...response} |
+
+对于前端项目：
+
+- 访问页面时需要在URL地址上配置一个**corpId** 参数，如：`http://127.0.0.1:8089/?corpId=ding94925051369422aa35c2f4657eb6378f`
+- 请求的地址需要替换成你本机的服务端IP
+- 钉钉客户端会有缓存，如果你修改了HTML，需要在设置中清除缓存，才能看到修改的内容。
 
 如果你准备就绪，请不要忘记 Fork项目，并发起一次 [Pull request](https://github.com/open-dingtalk/which-language-demo/pulls) 。
 
@@ -61,3 +68,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
