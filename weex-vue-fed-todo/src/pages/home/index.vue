@@ -1,12 +1,12 @@
 <template>
   <div class="wrapper">
     <text class="title" v-on:click="getClick">{{ link }}</text>
-    <text class="subtitle">Hello icepy,i love your playground !!!</text>
+    <text class="subtitle" v-on:click="getShare">Hello icepy,i love your playground !!!</text>
   </div>
 </template>
 <script>
-  import { setRight,toast, setTitle } from '../../lib/util.js';
-
+  import { setRight,toast, setTitle,share } from '../../lib/util.js';
+  
   export default {
     name: 'home',
     data (){
@@ -26,6 +26,9 @@
     methods: {
       getClick: function(){
         this.$router.push('list');
+      },
+      getShare: function(){
+        share();
       }
     }
   }
