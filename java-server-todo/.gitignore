@@ -1,0 +1,10 @@
+api/*.iml
+provider/*.iml
+web/*.iml
+*.iml
+**/*.iml
+.idea/
+.idea/*
+.project
+Permanent_Data/*
+*secrect*

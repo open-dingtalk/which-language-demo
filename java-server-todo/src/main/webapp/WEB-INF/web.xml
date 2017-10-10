@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+    <servlet>
+        <servlet-name>UserInfoServlet</servlet-name>
+        <servlet-class>com.alibaba.dingtalk.openapi.servlet.UserInfoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>JsAPIServlet</servlet-name>
+        <servlet-class>com.alibaba.dingtalk.openapi.servlet.JsAPIServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserIdServlet</servlet-name>
+        <servlet-class>com.alibaba.dingtalk.openapi.servlet.UserIdServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ContactsServlet</servlet-name>
+        <servlet-class>com.alibaba.dingtalk.openapi.servlet.ContactsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EventChangeReceiveServlet</servlet-name>
+        <servlet-class>com.alibaba.dingtalk.openapi.servlet.EventChangeReceiveServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserInfoServlet</servlet-name>
+        <url-pattern>/api/get-user-info</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>JsAPIServlet</servlet-name>
+        <url-pattern>/api/jsapi-oauth</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserIdServlet</servlet-name>
+        <url-pattern>/api/get</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ContactsServlet</servlet-name>
+        <url-pattern>/contactsinfo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EventChangeReceiveServlet</servlet-name>
+        <url-pattern>/eventreceive</url-pattern>
+    </servlet-mapping>
+</web-app>

@@ -1,5 +1,5 @@
 (function(){
-    var OPENAPIHOST = 'http://30.27.108.2:3000';
+    var OPENAPIHOST = 'http://30.4.112.39:8080';
     var isDingtalk = /DingTalk/.test(navigator.userAgent);
     var proper = {};
     var _userId = '';
@@ -159,7 +159,7 @@
 
         });
         dd.error(function(err){
-            alert(JSON.stringify(err));
+            alert(JSON.stringify(err)+"ww");
         });
         var originalUrl = location.href;
         var corpId = parseCorpId(originalUrl, 'corpId');
@@ -169,6 +169,7 @@
             type: 'GET',
             dataType: 'json',
             success: function(response){
+                alert("123");
                 if (response.errcode === 0){
                     const config = {
                         agentId: response.agentId || '',
@@ -178,14 +179,15 @@
                         signature: response.signature || '',
                         jsApiList: jsApiList || []
                     };
+                
                     dd.config(config);
                     getUserId(corpId);
                 } else {
                     alert(JSON.stringify(response) + 'sign');
                 }
             },
-            error: function(){
-
+            error: function(response){
+                alert(response.status+OPENAPIHOST + '/api/jsapi-oauth?href='+encodeURIComponent(location.href));   
             }
         };
         $.ajax(signRequest);
