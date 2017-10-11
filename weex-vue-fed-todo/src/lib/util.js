@@ -143,3 +143,15 @@ export function setTitle(title){
     })
   });
 }
+
+export function share(opt){
+  dingtalk.ready(function(){
+    dingtalk.apis.biz.util.share({
+      type: 0,
+      url: 'https://github.com/icepy',
+      title: 'icepy',
+      content: '1234',
+      image:'https://avatars2.githubusercontent.com/u/3321837?v=4&s=400&u=474bf7c009911c87a36679fe18ab6e5aba26d9b7'
+    })
+  })
+}
