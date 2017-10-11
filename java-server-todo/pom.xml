@@ -185,7 +185,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>ding-app-demo</finalName>
+        <finalName>java-server-todo</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
